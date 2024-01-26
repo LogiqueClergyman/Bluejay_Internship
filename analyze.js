@@ -138,4 +138,12 @@ const excelData = loadExcelData(filePath);
 if (excelData) {
   const analysisOutput = analyzeData(excelData);
   writeToOutputFile(analysisOutput);
+  console.log("---------------------------------------------------");
+  for(let key in analysisOutput) {
+    console.log("Category: " + key);
+    for(let i = 0; i < analysisOutput[key].length; i++) {
+      console.log(analysisOutput[key][i]);
+    }
+    console.log("---------------------------------------------------");
+  }
 }
